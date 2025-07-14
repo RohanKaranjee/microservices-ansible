@@ -1,0 +1,8 @@
+---
+- name: Restart Docker
+  service:
+    name: docker
+    state: restarted
+
+- name: Restart Docker Compose Services
+  command: docker-compose -f /home/ubuntu/docker-compose.yml down && docker-compose -f /home/ubuntu/docker-compose.yml up -d
